@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-24",
+  "python": "3.12.14",
+  "tests_passed": 56,
+  "tests_skipped": 0,
+  "statements": 513,
+  "statements_covered": 498,
+  "coverage_percent": 97.08,
+  "ruff": "passed",
+  "wheel_build": "passed",
+  "wheel_clean_environment_demo": "passed",
+  "real_kafka_native": "passed",
+  "docker_local": "not_available",
+  "github_actions": "not_yet_run",
+  "postgresql_debezium": "blueprint_not_executed",
+  "synthetic_data": true
+}

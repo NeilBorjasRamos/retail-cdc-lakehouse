@@ -1,0 +1,45 @@
+{
+  "generation": 7,
+  "reconciled": true,
+  "counts": {
+    "changes": 2467,
+    "current": 800,
+    "history": 2267,
+    "gold": 4
+  },
+  "differences": {
+    "changes": 0,
+    "current": 0,
+    "history": 0,
+    "gold": 0
+  },
+  "snapshots": {
+    "changes": 4009198668472698833,
+    "current": 8239713394818932658,
+    "gold": 961563119617357694,
+    "history": 1172568256273682988
+  },
+  "next_offsets": {
+    "retail-smoke-a6c9375db2c5:0": 2467
+  },
+  "revision_gaps": 0,
+  "totals": [
+    {
+      "currency": "PEN",
+      "orders": 400,
+      "amount_minor": 3800000
+    },
+    {
+      "currency": "USD",
+      "orders": 400,
+      "amount_minor": 3800000
+    }
+  ],
+  "validation": {
+    "real_kafka": true,
+    "synthetic": true,
+    "contract_break_blocked_without_cursor_advance": true,
+    "transport_records": 2467,
+    "broker_version_expected": "3.9.1"
+  }
+}

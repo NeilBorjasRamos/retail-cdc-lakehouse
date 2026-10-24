@@ -1,0 +1,49 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6.8.0
+        with:
+          version: "0.13.4"
+      - run: uv python install 3.12
+      - run: uv sync --frozen --extra dev --python 3.12
+      - run: make lint hygiene
+      - run: uv run --frozen pytest --cov --cov-fail-under=85 --cov-report=xml -q
+      - run: make demo
+      - run: docker compose up -d --wait kafka
+      - name: Real Kafka to Iceberg and poison record drill
+        run: make kafka-smoke
+      - run: uv build
+      - name: Install wheel in a clean environment
+        run: |
+          uv venv /tmp/retail-wheel
+          uv pip install --python /tmp/retail-wheel/bin/python dist/*.whl
+          /tmp/retail-wheel/bin/retail --root /tmp/retail-wheel-demo demo --count 10
+      - name: Build and run non-root image
+        run: |
+          docker compose build app
+          docker compose run --rm app --root /app/data/ci-demo demo --count 10
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: validation
+          path: |
+            coverage.xml
+            data/demo/validation.json
+            data/kafka-smoke/validation.json
+            dist/*
+      - name: Stop disposable CI services
+        if: always()
+        run: docker compose down -v

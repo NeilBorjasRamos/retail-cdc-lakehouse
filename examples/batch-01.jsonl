@@ -1,0 +1,1 @@
+{"key":{"order_id":"O00000001"},"offset":0,"partition":0,"topic":"retail.public.orders","value":{"after":{"amount_minor":1017,"currency":"PEN","customer_id":"C000001","order_id":"O00000001","revision":1,"status":"created","updated_at":"2025-01-01T12:00:00Z"},"before":null,"op":"r","source":{"db":"retail","lsn":1000,"table":"orders"}}}

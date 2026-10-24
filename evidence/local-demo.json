@@ -1,0 +1,80 @@
+{
+  "generation": 3,
+  "reconciled": true,
+  "counts": {
+    "changes": 2467,
+    "current": 800,
+    "history": 2267,
+    "gold": 4
+  },
+  "differences": {
+    "changes": 0,
+    "current": 0,
+    "history": 0,
+    "gold": 0
+  },
+  "snapshots": {
+    "changes": 8800077941152809069,
+    "current": 9047969763749223189,
+    "gold": 46486212648642689,
+    "history": 4402197294071130740
+  },
+  "next_offsets": {
+    "retail.public.orders:0": 2467
+  },
+  "revision_gaps": 0,
+  "totals": [
+    {
+      "currency": "PEN",
+      "orders": 400,
+      "amount_minor": 3800000
+    },
+    {
+      "currency": "USD",
+      "orders": 400,
+      "amount_minor": 3800000
+    }
+  ],
+  "validation": {
+    "synthetic": true,
+    "orders_generated": 1000,
+    "failure_after_current_recovered": true,
+    "historical_publication_unchanged": true,
+    "replay_added": 0,
+    "batches": [
+      {
+        "generation": 1,
+        "added": 1000,
+        "replayed": 0,
+        "counts": {
+          "changes": 1000,
+          "current": 1000,
+          "history": 1000,
+          "gold": 2
+        }
+      },
+      {
+        "generation": 2,
+        "added": 1200,
+        "replayed": 0,
+        "counts": {
+          "changes": 2200,
+          "current": 800,
+          "history": 2000,
+          "gold": 4
+        }
+      },
+      {
+        "generation": 3,
+        "added": 267,
+        "replayed": 0,
+        "counts": {
+          "changes": 2467,
+          "current": 800,
+          "history": 2267,
+          "gold": 4
+        }
+      }
+    ]
+  }
+}
