@@ -13,7 +13,7 @@ dependencies = [
   "pyiceberg[sql-sqlite,pyarrow]==0.10.0",
   "pyarrow==22.0.0",
   "duckdb==1.4.3",
-  "filelock==3.20.0",
+  "filelock==4.2.4",
   "confluent-kafka==2.8.2",
 ]
 
