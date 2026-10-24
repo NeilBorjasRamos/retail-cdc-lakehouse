@@ -1,5 +1,7 @@
 # Retail CDC Lakehouse
 
+[![CI](https://github.com/NeilBorjasRamos/retail-cdc-lakehouse/actions/workflows/ci.yml/badge.svg)](https://github.com/NeilBorjasRamos/retail-cdc-lakehouse/actions/runs/40135660738)
+
 **A recoverable CDC lakehouse with Apache Iceberg, revision history and consistent multi-table reads.**
 
 [Español](README.es.md) · [Step-by-step guide](docs/GUIA_COMPLETA.md) ·
@@ -158,7 +160,7 @@ publications pin old snapshots. Never expire them without a retention design.
 Start with [the interview walkthrough](docs/PORTFOLIO.md), then inspect
 `engine.py`, `storage.py`, and `tests/test_process_recovery.py`. Validation status,
 including what was and was not executed, is recorded in [VALIDATION](docs/VALIDATION.md).
-CI is defined but a remote Actions success is only claimed after a real repository run.
+[Verified GitHub Actions run](https://github.com/NeilBorjasRamos/retail-cdc-lakehouse/actions/runs/40135660738): 56 tests passed, 95.71% coverage, real Kafka drill, clean wheel install, and Docker image build and execution.
 
 Contributions: [CONTRIBUTING](CONTRIBUTING.md). Security: [SECURITY](SECURITY.md).
 License: [MIT](LICENSE).

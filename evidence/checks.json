@@ -11,7 +11,15 @@
   "wheel_clean_environment_demo": "passed",
   "real_kafka_native": "passed",
   "docker_local": "not_available",
-  "github_actions": "not_yet_run",
+  "github_actions": {
+    "status": "success",
+    "url": "https://github.com/NeilBorjasRamos/retail-cdc-lakehouse/actions/runs/40135660738",
+    "commit": "0c7e2229cff910d18f91010ebc9706a99357bf64",
+    "tests_passed": 56,
+    "coverage_percent": 95.71,
+    "docker_build_and_execution": "passed",
+    "kafka_compose_drill": "passed"
+  },
   "postgresql_debezium": "blueprint_not_executed",
   "synthetic_data": true
 }

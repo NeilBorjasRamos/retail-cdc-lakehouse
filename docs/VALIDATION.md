@@ -39,11 +39,13 @@ de una fuente PostgreSQL real requiere la comparación externa descrita en SOURC
 
 ## Lo que no se ejecutó o no se afirma
 
-Docker no está disponible en el entorno local de construcción: el archivo Compose y
-la imagen están incluidos, pero no se presenta una ejecución Docker local satisfactoria.
-El broker usado para la prueba fue una distribución Kafka nativa. El workflow de GitHub
-incluye Compose, build y ejecución de la imagen; su éxito debe confirmarse cuando el
-proyecto se publique y se ejecute Actions. No hay enlace de CI remoto verificado aún.
+La ejecución remota de [GitHub Actions](https://github.com/NeilBorjasRamos/retail-cdc-lakehouse/actions/runs/40135660738) terminó correctamente
+sobre el commit 0c7e2229cff910d18f91010ebc9706a99357bf64: 56 pruebas aprobadas,
+95.71 % de cobertura, Kafka en Docker Compose, instalación del wheel en entorno limpio
+y construcción y ejecución de la imagen como usuario no root. Los valores locales de
+la tabla anterior se conservan como evidencia separada. La actualización posterior
+solo documenta estos resultados y no modifica código ni workflow.
+
 
 Tampoco se probó PostgreSQL → Debezium, REST catalog, almacenamiento cloud, múltiples
 escritores distribuidos, backup/restore completo, pérdida eléctrica, rendimiento sostenido
